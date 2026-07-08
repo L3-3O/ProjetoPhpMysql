@@ -1,84 +1,27 @@
+<?php require_once __DIR__.'/componentes/config.php'?>
+<?php require_once __DIR__.'/componentes/rotas.php'?>
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Estoque</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous" />
 </head>
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-
-            <!-- Nome do Projeto -->
-            <a class="navbar-brand fw-bold" href="#">
-                Controle de Estoque
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarMenu">
-
-                <!-- Links à direita -->
-                <ul class="navbar-nav ms-auto">
-
-                    <!-- Dropdown 1 -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Produtos
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Cadastrar Produto</a></li>
-                            <li><a class="dropdown-item" href="#">Listar Produtos</a></li>
-                            <li><a class="dropdown-item" href="#">Categorias</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Dropdown 2 -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Movimentações
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Entrada</a></li>
-                            <li><a class="dropdown-item" href="#">Saída</a></li>
-                            <li><a class="dropdown-item" href="#">Histórico</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Dropdown 3 -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Relatórios
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Estoque Atual</a></li>
-                            <li><a class="dropdown-item" href="#">Produtos em Falta</a></li>
-                            <li><a class="dropdown-item" href="#">Inventário</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-
-            </div>
-        </div>
-    </nav>
+   <?php require_once APP_COMPONENTES.'/nav.php';?>
 
     <!-- HEADER -->
-    <header class="bg-light py-5 text-center">
-        <div class="container">
-            <h1 class="display-5">Sistema de Controle de Estoque</h1>
-            <p class="lead">
-                Gerencie produtos, movimentações e relatórios de forma simples.
-            </p>
-        </div>
-    </header>
+    <?php require_once APP_COMPONENTES.'/header.php';?>
+    
 
     <!-- SECTION -->
     <section class="container my-5">
@@ -117,14 +60,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-dark text-white text-center py-3 mt-5">
-        <div class="container">
-            <p class="mb-0">
-                &copy; 2026 Controle de Estoque. Todos os direitos reservados.
-            </p>
-        </div>
-    </footer>
-
+   <?php require_once APP_COMPONENTES.'/footer.php';?>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 

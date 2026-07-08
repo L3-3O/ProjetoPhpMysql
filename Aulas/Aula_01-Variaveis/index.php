@@ -1,3 +1,4 @@
+<?php require_once dirname(__DIR__). '../componentes/rotas.php'?>
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
 
@@ -120,7 +121,7 @@
                                     <thead>
                                         <tr>
                                             <th width="250">Produto</th>
-                                            <th><?= $produto ?? 'Não definido'; ?></th>
+                                            <th><?= $produto??'Não definido'; ?></th>
 
 
                                         </tr>
@@ -175,3 +176,4 @@
 </body>
 
 </html>
+

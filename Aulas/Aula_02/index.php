@@ -1,3 +1,4 @@
+<?php require_once dirname(__DIR__). '../componentes/rotas.php'?>
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
 
@@ -53,15 +54,21 @@
 
         </p>
 
-        <h1>Operadores</h1>
+        <h1>Desafio 3</h1>
+
         <?php
-        $valor1=1250;
-        $valor2=15;
-        ?>
-        <h3>Soma</h3>
-        <?php $total = $valor1 + $valor2; ?>
-        A soma de  +  é igual a :
+        $produto="Celular";
+        $preçoUnitario=3.600;
+        $quantidade=5;
+        $total = $preçoUnitario * $quantidade;
         
+        
+        ?>
+
+        <h6>OProduto : <?= $produto ?></h6>  
+        <h6>Preço: <?= $preçoUnitario ?><br></h6> 
+        <h6>Quantidade: <?= $quantidade ?></h6> 
+        <h6>Total da venda: <?=$total ?></h6>
     </main>
     <?php require_once '../Componentes/footer.php' ?>
     <!-- Bootstrap JavaScript Bundle (includes Popper) -->
