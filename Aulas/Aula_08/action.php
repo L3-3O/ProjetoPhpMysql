@@ -15,10 +15,24 @@
 
 <?php 
 if(!empty($_POST['email_login'])&&!empty($_POST['senha_login'])){
-$user="Leo@gmail.com";
-$senha="kyurVYAMJhBqI5es/9nUYT1hd5z484HLiQF0CyKFEcIJURrAZqarDmzume1hMAs7dLQgvAuoaG7auan86zGUWA==";
-echo $emailogin=filter_input(INPUT_POST,'email_login',FILTER_SANITIZE_SPECIAL_CHARS);
-echo $senhalogin=filter_input(INPUT_POST,'senha_login',FILTER_SANITIZE_SPECIAL_CHARS);
+$user="leo@gmail.com";
+$senha="niZ349FB/UnMtnsoEYFpV9yLtnI7QE5eOfGt1JKWhjkr8v+MEXVtOGLwKbPTXpdX641IQL4cLNzBw1LmtyDUCg==";
+$nome= "Leo";
+$senhadec= encrypt_secure($senha,'d');
+$emailogin=filter_input(INPUT_POST,'email_login',FILTER_SANITIZE_SPECIAL_CHARS);
+$senhalogin=$_POST['senha_login'];
+if($emailogin==$user&&$senhalogin==$senhadec){
+ $_SESSION['userstatus']=true;
+ $_SESSION['nomeuser']=$nome;   
+ $_SESSION['tempodeacesso']=time();   
+ $_SESSION['dataacesso']=$data;
+ header('Location:paineladmin.php');
+ exit();   
+
+
+ } else{
+    echo"email: ". $emailogin." e senha ". $senhalogin. " Não conferem.";
+    exit();}
 }
 ?>
 
@@ -28,6 +42,6 @@ echo $senhalogin=filter_input(INPUT_POST,'senha_login',FILTER_SANITIZE_SPECIAL_C
 //codigo para retorno automatico  limpando o cache
 //o header esta expulsando da pagina
 //exit(); esta limpando o cache da pagina
-// header("Location:index.php");
-// exit();
+ //header("Location:index.php");
+//exit();
 ?>
