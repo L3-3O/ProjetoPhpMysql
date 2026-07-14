@@ -246,4 +246,3 @@ function pegarIp(): string
     return 'IP não identificado';
 }
 ?>
-dado

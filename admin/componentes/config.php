@@ -246,4 +246,10 @@ function pegarIp(): string
     return 'IP não identificado';
 }
 ?>
-dado
+
+<?php 
+if (!isset($_SESSION['adminstatus']) || $_SESSION['adminstatus'] !== true) {
+    header('Location: ../index.php');
+    exit;
+}
+?>

@@ -1,3 +1,9 @@
+<?php
+require_once 'componentes/config.php' ;
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR" data-bs-theme="light">
 <head>
@@ -251,7 +257,7 @@
 
                 <hr class="text-secondary mx-3 my-2 opacity-25">
 
-                <a class="nav-link text-danger mt-auto" href="#">
+                <a class="nav-link text-danger mt-auto" href="/admin/sair.php">
                     <i class="bi bi-box-arrow-left"></i>
                     <span class="nav-text">Sair</span>
                 </a>
