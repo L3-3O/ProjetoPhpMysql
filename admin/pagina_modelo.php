@@ -1,7 +1,5 @@
-<?php
-require_once 'componentes/config.php' ;
-
-?>
+<?php require_once 'componentes/config.php' ?>
+<?php //require_once 'componentes/conexao.php' ?>
 
 
 <!DOCTYPE html>
@@ -171,147 +169,15 @@ require_once 'componentes/config.php' ;
         </div>
 
         <div class="overflow-y-auto flex-grow-1 py-3">
-            <nav class="nav flex-column h-100" aria-label="Menu Principal">
-                <a class="nav-link active" href="#" aria-current="page">
-                    <i class="bi bi-speedometer2"></i>
-                    <span class="nav-text">Dashboard</span>
-                </a>
-
-                <div>
-                    <a class="nav-link dropdown-toggle" href="#menuProdutos" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="menuProdutos">
-                        <i class="bi bi-box-seam"></i>
-                        <span class="nav-text flex-grow-1">Produtos</span>
-                    </a>
-                    <div class="collapse submenu" id="menuProdutos">
-                        <nav class="nav flex-column">
-                            <a class="nav-link" href="#">Listar produtos</a>
-                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalNovoProduto">Novo produto</a>
-                            <a class="nav-link" href="#">Estoque baixo</a>
-                        </nav>
-                    </div>
-                </div>
-
-                <a class="nav-link" href="#">
-                    <i class="bi bi-tags"></i>
-                    <span class="nav-text">Categorias</span>
-                </a>
-
-                <div>
-                    <a class="nav-link dropdown-toggle" href="#menuEstoque" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="menuEstoque">
-                        <i class="bi bi-boxes"></i>
-                        <span class="nav-text flex-grow-1">Estoque</span>
-                    </a>
-                    <div class="collapse submenu" id="menuEstoque">
-                        <nav class="nav flex-column">
-                            <a class="nav-link" href="#">Movimentações</a>
-                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalEntradaEstoque">Entrada de estoque</a>
-                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalSaidaEstoque">Saída de estoque</a>
-                            <a class="nav-link" href="#">Inventário</a>
-                        </nav>
-                    </div>
-                </div>
-
-                <a class="nav-link" href="#">
-                    <i class="bi bi-arrow-down-circle"></i>
-                    <span class="nav-text">Entradas</span>
-                </a>
-                <a class="nav-link" href="#">
-                    <i class="bi bi-arrow-up-circle"></i>
-                    <span class="nav-text">Saídas</span>
-                </a>
-                <a class="nav-link" href="#">
-                    <i class="bi bi-truck"></i>
-                    <span class="nav-text">Fornecedores</span>
-                </a>
-                <a class="nav-link" href="#">
-                    <i class="bi bi-people"></i>
-                    <span class="nav-text">Clientes</span>
-                </a>
-                <a class="nav-link" href="#">
-                    <i class="bi bi-cart"></i>
-                    <span class="nav-text">Pedidos</span>
-                </a>
-
-                <div>
-                    <a class="nav-link dropdown-toggle" href="#menuRelatorios" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="menuRelatorios">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        <span class="nav-text flex-grow-1">Relatórios</span>
-                    </a>
-                    <div class="collapse submenu" id="menuRelatorios">
-                        <nav class="nav flex-column">
-                            <a class="nav-link" href="#">Relatório Financeiro</a>
-                            <a class="nav-link" href="#">Giro de Estoque</a>
-                            <a class="nav-link" href="#">Curva ABC</a>
-                        </nav>
-                    </div>
-                </div>
-
-                <a class="nav-link" href="#">
-                    <i class="bi bi-person-gear"></i>
-                    <span class="nav-text">Usuários</span>
-                </a>
-                <a class="nav-link" href="#">
-                    <i class="bi bi-gear"></i>
-                    <span class="nav-text">Configurações</span>
-                </a>
-
-                <hr class="text-secondary mx-3 my-2 opacity-25">
-
-                <a class="nav-link text-danger mt-auto" href="/admin/sair.php">
-                    <i class="bi bi-box-arrow-left"></i>
-                    <span class="nav-text">Sair</span>
-                </a>
-            </nav>
+        <!-- NAV -->
+         <?php require_once 'componentes/nav.php' ?>
         </div>
     </aside>
 
     <div class="dashboard-wrapper">
         
-        <header class="navbar navbar-expand px-3 shadow-sm align-items-center justify-content-between">
-            <div class="d-flex align-items-center gap-3">
-                <button class="btn btn-light border d-lg-none" type="button" id="btnMobileToggle" aria-label="Abrir menu">
-                    <i class="bi bi-list fs-4"></i>
-                </button>
-                <form class="d-none d-md-flex" role="search">
-                    <div class="input-group">
-                        <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search text-muted"></i></span>
-                        <input class="form-control border-start-0" type="search" placeholder="Buscar produtos, SKU, lotes..." aria-label="Pesquisar">
-                    </div>
-                </form>
-            </div>
-
-            <div class="d-flex align-items-center gap-3">
-                
-                <button type="button" class="btn btn-icon btn-light position-relative border" aria-label="Mensagens">
-                    <i class="bi bi-chat-left-text"></i>
-                </button>
-
-                <button type="button" class="btn btn-icon btn-light position-relative border" aria-label="Notificações">
-                    <i class="bi bi-bell"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        3
-                        <span class="visually-hidden">notificações não lidas</span>
-                    </span>
-                </button>
-
-                <button type="button" class="btn btn-light border" id="btnThemeToggle" aria-label="Alternar tema escuro/claro">
-                    <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
-                </button>
-
-                <div class="dropdown">
-                    <button class="btn d-flex align-items-center gap-2 p-0 border-0" type="button" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=50&auto=format&fit=crop&q=80" alt="Foto de Perfil" class="rounded-circle object-fit-cover" width="38" height="38">
-                        <span class="d-none d-md-inline fw-medium text-body fs-6">Ana Silva</span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownUser">
-                        <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><i class="bi bi-person"></i> Meu perfil</a></li>
-                        <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><i class="bi bi-gear"></i> Configurações</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item d-flex align-items-center gap-2 text-danger" href="#"><i class="bi bi-box-arrow-left"></i> Sair</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
+        <!-- HEADER -->
+         <?php require_once 'componentes/header.php' ?>
 
         <main>
             <article>
@@ -466,14 +332,8 @@ require_once 'componentes/config.php' ;
             </article>
         </main>
 
-        <footer class="py-3 px-4 mt-auto border-top text-center text-md-between d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 bg-body-tertiary">
-            <span class="text-muted small">&copy; 2026 <strong>StockMaster</strong>. Todos os direitos reservados.</span>
-            <div class="d-flex gap-3 small">
-                <a href="#" class="text-decoration-none text-muted">Termos de Uso</a>
-                <a href="#" class="text-decoration-none text-muted">Política de Privacidade</a>
-                <a href="#" class="text-decoration-none text-muted">Suporte</a>
-            </div>
-        </footer>
+      <!-- FOOTER -->
+       <?php require_once 'componentes/footer.php' ?>
     </div>
 
     <div class="modal fade" id="modalNovoProduto" tabindex="-1" aria-labelledby="modalNovoProdutoLabel" aria-hidden="true">

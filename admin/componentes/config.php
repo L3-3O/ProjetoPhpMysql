@@ -253,3 +253,7 @@ if (!isset($_SESSION['adminstatus']) || $_SESSION['adminstatus'] !== true) {
     exit;
 }
 ?>
+
+<?php 
+$con = config::connect();
+?>

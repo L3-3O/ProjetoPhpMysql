@@ -16,7 +16,7 @@ try{
         PDO::ATTR_ERRMODE,
         PDO::ERRMODE_EXCEPTION
     )
-} catch(PDOException $erro){
+;} catch(PDOException $erro){
     die("Erro na conexão".
     $erro->getMessage())
     
