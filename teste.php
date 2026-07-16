@@ -7,11 +7,20 @@
 ?>
 
 <?php 
- $dados =[];
-$sql="SELECT nome, email,senha
-      FROM usuarios
-      ORDER BY nome DESC
-"
-$stmt= $con
+
+
+$con = Config::connect();
+
+
+
+$sql = "SELECT email, senha
+        FROM usuarios ";
+
+$stmt = $con->query($sql);
+
+$dados = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$emaildb= $dados['email'];
+$senhadb= $dados['senha'];
 
 ?>

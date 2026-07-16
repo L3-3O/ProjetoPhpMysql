@@ -1,6 +1,7 @@
 <?php
 
 require_once 'config.php';
+require_once 'conexao.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -33,10 +34,24 @@ if ($login === '' || $senha === '') {
     exit;
 }
 
-$loginCorreto = 'admin@admin.com';
-$senhaCorreta = '123456';
+$con = Config::connect();
 
-if ($login !== $loginCorreto || $senha !== $senhaCorreta) {
+
+
+$sql = "SELECT id, email, senha, nivel, nome
+        FROM usuarios WHERE email='$login' ";
+        
+
+$stmt = $con->query($sql);
+
+$dados = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$loginCorreto= $dados['email']??'0';
+$senhaCorreta= $dados['senha']??'0';
+$dec = encrypt_secure($senhaCorreta,'d');
+
+
+if ($login !== $loginCorreto || $senha !== $dec) {
     http_response_code(401);
 
     echo json_encode([
@@ -49,9 +64,10 @@ if ($login !== $loginCorreto || $senha !== $senhaCorreta) {
 session_regenerate_id(true);
 
 $_SESSION['adminstatus'] = true;
-$_SESSION['admin_nome'] = 'Administrador';
+$_SESSION['admin_nome'] = $dados['nome'];
+$_SESSION['admin_nivel'] = $dados['nivel'];
 $_SESSION['admin_email'] = $login;
-$_SESSION['id_admin'] = "123";
+$_SESSION['id_admin'] = encrypt_secure($dados['id'], 'e');
 
 echo json_encode([
     'sucesso' => true,
@@ -59,3 +75,5 @@ echo json_encode([
     'redirecionar' => 'admin/index.php'
 ]);
 exit;
+?>
+

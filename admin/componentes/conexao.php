@@ -1,5 +1,5 @@
 <?php
-require_once'config.php';
+require_once 'config.php';
 $host ="localhost";
 $banco="estoque";
 $usuario="root";

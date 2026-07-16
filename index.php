@@ -1,5 +1,5 @@
-<?php require_once '/componentes/config.php' ?>
-<?php require_once __DIR__ . '/componentes/rotas.php' ?>
+<?php require_once 'componentes/config.php' ?>
+<?php require_once  'componentes/rotas.php' ?>
 <?php require_once 'componentes/conexao.php' ?>
 
 <?php /* if(!empty($_SESSION['adminstatus'])){
