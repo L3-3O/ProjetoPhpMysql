@@ -1,3 +1,9 @@
+<?php require_once  'componentes/config.php' ?>
+<?php require_once  'componentes/conexao.php' ?>
+<?php require_once  'componentes/rotas.php' ?>
+<?php require_once  'query/query_produtos.php' ?>
+
+
 <?php require_once 'componentes/config.php' ?>
 <?php //require_once 'componentes/conexao.php' ?>
 
@@ -209,8 +215,43 @@
                 </div>
 
                 <div class="row g-3 mb-4">
-                    <div class="col-12 col-sm-6 col-xl-3">
-                        conteúdo aqui
+                    <div class="col-12 ">
+                        <div class="table-responsive">
+  <table class="table table-striped table-hover align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col" style="width: 5%">nr</th>
+        <th scope="col" style="width: 40%">Produto</th>
+        <th scope="col" style="width: 25%">Categoria</th>
+        <th scope="col" style="width: 15%">Preço</th>
+        <th scope="col" style="width: 15%">Estoque</th>
+        <th scope="col" style="width: 15%" class="text-center">Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+        <?php foreach($dados as $produtos) { ?>
+      <tr>
+        <th scope="row">1</th>
+        <td><?php echo $produtos['nome']; ?></td>
+        <td><span class="badge bg-secondary"><?php echo $produtos['categoria']; ?></span></td>
+        <td><?php echo $produtos['preco']; ?></td>
+        <td><?php echo $produtos['estoque']; ?></td>
+        <?php $encId = encrypt_secure($produtos['id'], 'e') ;?>
+        <td class="text-center">
+          <div class="d-flex justify-content-center gap-2">
+            <a href="produto_editar.php?id=<?= $encId; ?> ?>" class="btn btn-sm btn-warning" title="Editar">
+              <i class="bi bi-pencil"></i> Editar
+            </a>
+            <a href="#" class="btn btn-sm btn-danger" title="Excluir">
+              <i class="bi bi-trash"></i> Excluir
+            </a>
+          </div>
+        </td>
+      </tr>
+      <?php } ?>
+    </tbody>
+  </table>
+</div>
                     </div>
                    
                  

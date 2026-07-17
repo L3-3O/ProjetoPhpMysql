@@ -13,7 +13,7 @@
                         <nav class="nav flex-column">
                             <a class="nav-link" href="#">Listar produtos</a>
                             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalNovoProduto">Novo produto</a>
-                            <a class="nav-link" href="#">Estoque baixo</a>
+                            <a class="nav-link" href="produtos.php">Produtos</a>
                         </nav>
                     </div>
                 </div>
