@@ -2,23 +2,20 @@
 <?php require_once  'componentes/conexao.php' ?>
 <?php require_once  'componentes/rotas.php' ?>
 <?php require_once  'query/query_produtos.php' ?>
-
-
-<?php require_once 'componentes/config.php' ?>
-<?php //require_once 'componentes/conexao.php' ?>
-
+<?php $con =Config::connect();?>
 
 <!DOCTYPE html>
 <html lang="pt-BR" data-bs-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StockMaster - Sistema de Controle de Estoque</title>
-    
+
     <meta name="description" content="Dashboard moderno para controle de estoque, gerenciamento de produtos, fornecedores e relatórios financeiros em tempo real.">
     <meta name="keywords" content="estoque, controle de estoque, dashboard, erp, gestão, produtos, logística">
     <meta name="author" content="Especialista Front-end">
-    
+
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6z'/></svg>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -74,7 +71,8 @@
             transition: all 0.2s;
         }
 
-        aside .nav-link:hover, aside .nav-link.active {
+        aside .nav-link:hover,
+        aside .nav-link.active {
             color: #ffffff;
             background-color: rgba(255, 255, 255, 0.1);
         }
@@ -146,15 +144,18 @@
             aside {
                 left: calc(-1 * var(--sidebar-width));
             }
+
             .dashboard-wrapper {
                 margin-left: 0 !important;
             }
+
             body.sidebar-open aside {
                 left: 0;
             }
         }
     </style>
 </head>
+
 <body>
 
     <aside id="sidebar" class="shadow">
@@ -175,15 +176,15 @@
         </div>
 
         <div class="overflow-y-auto flex-grow-1 py-3">
-        <!-- NAV -->
-         <?php require_once 'componentes/nav.php' ?>
+            <!-- NAV -->
+            <?php require_once 'componentes/nav.php' ?>
         </div>
     </aside>
 
     <div class="dashboard-wrapper">
-        
+
         <!-- HEADER -->
-         <?php require_once 'componentes/header.php' ?>
+        <?php require_once 'componentes/header.php' ?>
 
         <main>
             <article>
@@ -217,52 +218,52 @@
                 <div class="row g-3 mb-4">
                     <div class="col-12 ">
                         <div class="table-responsive">
-  <table class="table table-striped table-hover align-middle">
-    <thead class="table-dark">
-      <tr>
-        <th scope="col" style="width: 5%">nr</th>
-        <th scope="col" style="width: 40%">Produto</th>
-        <th scope="col" style="width: 25%">Categoria</th>
-        <th scope="col" style="width: 15%">Preço</th>
-        <th scope="col" style="width: 15%">Estoque</th>
-        <th scope="col" style="width: 15%" class="text-center">Ação</th>
-      </tr>
-    </thead>
-    <tbody>
-        <?php foreach($dados as $produtos) { ?>
-      <tr>
-        <th scope="row">1</th>
-        <td><?php echo $produtos['nome']; ?></td>
-        <td><span class="badge bg-secondary"><?php echo $produtos['categoria']; ?></span></td>
-        <td><?php echo $produtos['preco']; ?></td>
-        <td><?php echo $produtos['estoque']; ?></td>
-        <?php $encId = encrypt_secure($produtos['id'], 'e') ;?>
-        <td class="text-center">
-          <div class="d-flex justify-content-center gap-2">
-            <a href="produto_editar.php?id=<?= $encId; ?> ?>" class="btn btn-sm btn-warning" title="Editar">
-              <i class="bi bi-pencil"></i> Editar
-            </a>
-            <a href="#" class="btn btn-sm btn-danger" title="Excluir">
-              <i class="bi bi-trash"></i> Excluir
-            </a>
-          </div>
-        </td>
-      </tr>
-      <?php } ?>
-    </tbody>
-  </table>
-</div>
+                            <table class="table table-striped table-hover align-middle">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col" style="width: 5%">nr</th>
+                                        <th scope="col" style="width: 40%">Produto</th>
+                                        <th scope="col" style="width: 25%">Categoria</th>
+                                        <th scope="col" style="width: 15%">Preço</th>
+                                        <th scope="col" style="width: 15%">Estoque</th>
+                                        <th scope="col" style="width: 15%" class="text-center">Ação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($dados as $produtos) { ?>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td><?php echo $produtos['nome']; ?></td>
+                                            <td><span class="badge bg-secondary"><?php echo $produtos['categoria']; ?></span></td>
+                                            <td><?php echo $produtos['preco']; ?></td>
+                                            <td><?php echo $produtos['estoque']; ?></td>
+                                            <?php $encId = encrypt_secure($produtos['id'], 'e'); ?>
+                                            <td class="text-center">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a href="produto_editar.php?id=<?= urlencode($encId); ?> ?>" class="btn btn-sm btn-warning" title="Editar">
+                                                        <i class="bi bi-pencil"></i> Editar
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-danger" title="Excluir">
+                                                        <i class="bi bi-trash"></i> Excluir
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                   
-                 
+
+
                 </div>
 
-              
+
             </article>
         </main>
 
-      <!-- FOOTER -->
-       <?php require_once 'componentes/footer.php' ?>
+        <!-- FOOTER -->
+        <?php require_once 'componentes/footer.php' ?>
     </div>
 
     <div class="modal fade" id="modalNovoProduto" tabindex="-1" aria-labelledby="modalNovoProdutoLabel" aria-hidden="true">
@@ -401,7 +402,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
+
             // --- CONTROLE DA DATA ATUAL ---
             const dateBadge = document.getElementById('currentDate');
             const hoje = new Date();
@@ -445,15 +446,14 @@
             });
 
             // --- INICIALIZAÇÃO DOS GRÁFICOS (CHART.JS) ---
-            
+
             // Gráfico 1: Movimentações (Barras Multi-eixo)
             const ctxMov = document.getElementById('chartMovimentacoes').getContext('2d');
             new Chart(ctxMov, {
                 type: 'bar',
                 data: {
                     labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
-                    datasets: [
-                        {
+                    datasets: [{
                             label: 'Entradas',
                             data: [320, 410, 390, 480, 520, 452],
                             backgroundColor: '#198754',
@@ -471,10 +471,14 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
-                        legend: { position: 'top' }
+                        legend: {
+                            position: 'top'
+                        }
                     },
                     scales: {
-                        y: { beginAtZero: true }
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
             });
@@ -495,7 +499,9 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
-                        legend: { position: 'bottom' }
+                        legend: {
+                            position: 'bottom'
+                        }
                     }
                 }
             });
@@ -518,4 +524,5 @@
         });
     </script>
 </body>
+
 </html>

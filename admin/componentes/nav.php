@@ -18,7 +18,7 @@
                     </div>
                 </div>
 
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="categorias.php">
                     <i class="bi bi-tags"></i>
                     <span class="nav-text">Categorias</span>
                 </a>
@@ -30,10 +30,10 @@
                     </a>
                     <div class="collapse submenu" id="menuEstoque">
                         <nav class="nav flex-column">
-                            <a class="nav-link" href="#">Movimentações</a>
+                            <a class="nav-link" href="estoque_entrada.php">Estoque</a>
                             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalEntradaEstoque">Entrada de estoque</a>
                             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalSaidaEstoque">Saída de estoque</a>
-                            <a class="nav-link" href="#">Inventário</a>
+                            
                         </nav>
                     </div>
                 </div>
