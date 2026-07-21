@@ -30,7 +30,7 @@
                     </a>
                     <div class="collapse submenu" id="menuEstoque">
                         <nav class="nav flex-column">
-                            <a class="nav-link" href="estoque_entrada.php">Estoque</a>
+                            <a class="nav-link" href="estoque.php">Estoque</a>
                             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalEntradaEstoque">Entrada de estoque</a>
                             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalSaidaEstoque">Saída de estoque</a>
                             

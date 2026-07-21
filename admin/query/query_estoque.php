@@ -1,19 +1,14 @@
 <?php
 
-$tipo = "Estoque";
 
-$con =Config::connect();
+$con = Config::connect();
 
-$sql = "SELECT id,	produto_id,	tipo,	quantidade,	observacao,	criado_em	
 
+$sql = "SELECT id, produto_id, tipo, quantidade, observacao, criado_em 
         FROM movimentacoes_estoque
-        WHERE tipo = :tipo
-        ORDER BY tipo DESC";
+        ORDER BY criado_em DESC";
 
 $stmt = $con->prepare($sql);
-
-$stmt->execute([
-    ':tipo' => $tipo
-]);
+$stmt->execute();
 
 $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
