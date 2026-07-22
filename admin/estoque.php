@@ -169,11 +169,7 @@
             </button>
         </div>
 
-        <div class="user-profile-box p-3 text-center border-bottom border-secondary border-opacity-25">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Foto do Administrador" class="rounded-circle mb-2 object-fit-cover shadow-sm" width="64" height="64">
-            <h6 class="mb-0 fw-semibold text-white">Ana Silva</h6>
-            <small class="text-white-50">Administrador</small>
-        </div>
+        
 
         <div class="overflow-y-auto flex-grow-1 py-3">
             <!-- NAV -->

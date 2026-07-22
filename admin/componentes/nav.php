@@ -1,3 +1,9 @@
+ <div class="user-profile-box p-3 text-center border-bottom border-secondary border-opacity-25">
+            <img src="componentes/rock.jpg" alt="Foto do Administrador" class="rounded-circle mb-2 object-fit-cover shadow-sm" width="64" height="64">
+            <h6 class="mb-0 fw-semibold text-white">LEØ</h6>
+            <small class="text-white-50">Administrador</small>
+        </div>
+ 
  <nav class="nav flex-column h-100" aria-label="Menu Principal">
                 <a class="nav-link active" href="#" aria-current="page">
                     <i class="bi bi-speedometer2"></i>

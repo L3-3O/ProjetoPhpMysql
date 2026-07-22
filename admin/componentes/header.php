@@ -31,8 +31,8 @@
 
                 <div class="dropdown">
                     <button class="btn d-flex align-items-center gap-2 p-0 border-0" type="button" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=50&auto=format&fit=crop&q=80" alt="Foto de Perfil" class="rounded-circle object-fit-cover" width="38" height="38">
-                        <span class="d-none d-md-inline fw-medium text-body fs-6">Ana Silva</span>
+                        <img src="componentes/rock.jpg" alt="Foto de Perfil" class="rounded-circle object-fit-cover" width="38" height="38">
+                        <span class="d-none d-md-inline fw-medium text-body fs-6">LEØ</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="dropdownUser">
                         <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><i class="bi bi-person"></i> Meu perfil</a></li>

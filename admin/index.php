@@ -163,8 +163,8 @@
         </div>
 
         <div class="user-profile-box p-3 text-center border-bottom border-secondary border-opacity-25">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Foto do Administrador" class="rounded-circle mb-2 object-fit-cover shadow-sm" width="64" height="64">
-            <h6 class="mb-0 fw-semibold text-white">Ana Silva</h6>
+            <img src="componentes\rock.jpg" alt="Foto do Administrador" class="rounded-circle mb-2 object-fit-cover shadow-sm" width="64" height="64">
+            <h6 class="mb-0 fw-semibold text-white">LEØ</h6>
             <small class="text-white-50">Administrador</small>
         </div>
 
@@ -184,7 +184,7 @@
                 <div class="d-flex flex-column flex-xl-row justify-content-between align-items-start align-items-xl-center mb-4 gap-3">
                     <div>
                         <h1 class="h2 fw-bold mb-1">Dashboard de Estoque</h1>
-                        <p class="text-muted mb-0">Bem-vinda de volta, Ana Silva. Aqui está o resumo das suas operações.</p>
+                        <p class="text-muted mb-0">Bem-vindo de volta, LEØ. Aqui está o resumo das suas operações.</p>
                         <nav aria-label="breadcrumb" class="mt-2">
                             <ol class="breadcrumb mb-0">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
